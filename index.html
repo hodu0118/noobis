@@ -69,6 +69,73 @@
     }
     .nav-links a:hover { color: var(--diamond); }
 
+    /* ─── COMMUNITY SECTION ─── */
+    #community { background: var(--bg); }
+
+    .community-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .comm-card {
+      display: flex; flex-direction: column; align-items: flex-start;
+      background: var(--surface);
+      border: 3px solid var(--border);
+      box-shadow: 4px 4px 0 rgba(0,0,0,.5);
+      padding: 1.4rem 1.3rem;
+      text-decoration: none;
+      color: var(--text);
+      transition: border-color .2s, transform .15s, box-shadow .15s;
+    }
+    .comm-card:hover {
+      transform: translate(-3px,-3px);
+      box-shadow: 7px 7px 0;
+    }
+    .comm-card.card-minelist:hover { border-color: #4ade80; box-shadow-color: #4ade80; box-shadow: 7px 7px 0 #4ade80; }
+    .comm-card.card-hmp:hover      { border-color: #fb923c; box-shadow: 7px 7px 0 #fb923c; }
+    .comm-card.card-discord:hover  { border-color: #818cf8; box-shadow: 7px 7px 0 #818cf8; }
+    .comm-card.card-youtube:hover  { border-color: #f87171; box-shadow: 7px 7px 0 #f87171; }
+
+    .comm-icon { font-size: 2rem; margin-bottom: .8rem; }
+    .comm-platform {
+      font-family: var(--pixel);
+      font-size: .45rem;
+      letter-spacing: .12em;
+      margin-bottom: .3rem;
+    }
+    .card-minelist .comm-platform { color: #4ade80; }
+    .card-hmp      .comm-platform { color: #fb923c; }
+    .card-discord  .comm-platform { color: #818cf8; }
+    .card-youtube  .comm-platform { color: #f87171; }
+
+    .comm-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: .3rem;
+    }
+    .comm-desc { font-size: .82rem; color: var(--muted); line-height: 1.6; }
+    .comm-arrow {
+      margin-top: 1rem;
+      font-family: var(--pixel);
+      font-size: .45rem;
+      color: var(--muted);
+    }
+
+    /* ─── FOOTER LINKS ─── */
+    .footer-links {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 1.2rem;
+      margin-bottom: 1rem;
+    }
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: .8rem;
+      transition: color .2s;
+    }
+    .footer-links a:hover { color: var(--diamond); }
+
     /* ─── HERO ─── */
     .hero {
       min-height: 100vh;
@@ -410,6 +477,7 @@
     <a href="#features">특징</a>
     <a href="#commands">명령어</a>
     <a href="#titles">칭호</a>
+    <a href="#community">커뮤니티</a>
     <a href="#join">접속하기</a>
   </div>
 </nav>
@@ -550,6 +618,46 @@
   </div>
 </section>
 
+<!-- COMMUNITY -->
+<section id="community">
+  <div class="section-inner">
+    <p class="section-label reveal">커뮤니티</p>
+    <h2 class="section-title reveal">뉴비스 서버 모음</h2>
+    <p class="section-desc reveal">투표, 공지, 소통, 영상까지 — 뉴비스와 함께하는 모든 공간.</p>
+
+    <div class="community-grid">
+      <a class="comm-card card-minelist reveal" href="https://brr.kr/noobis-minelist" target="_blank" rel="noopener">
+        <div class="comm-icon">📋</div>
+        <div class="comm-platform">MINELIST</div>
+        <div class="comm-title">마인리스트</div>
+        <p class="comm-desc">서버를 투표하고 랭킹을 올려보세요. 투표 보상도 있어요!</p>
+        <div class="comm-arrow">바로가기 →</div>
+      </a>
+      <a class="comm-card card-hmp reveal" href="https://brr.kr/noobis-hmp" target="_blank" rel="noopener">
+        <div class="comm-icon">🏠</div>
+        <div class="comm-platform">한마포</div>
+        <div class="comm-title">한국 마인크래프트 포럼</div>
+        <p class="comm-desc">한국 마인크래프트 커뮤니티에서 뉴비스를 만나보세요.</p>
+        <div class="comm-arrow">바로가기 →</div>
+      </a>
+      <a class="comm-card card-discord reveal" href="https://discord.gg/zuPfnsy27M" target="_blank" rel="noopener">
+        <div class="comm-icon">💬</div>
+        <div class="comm-platform">DISCORD</div>
+        <div class="comm-title">디스코드</div>
+        <p class="comm-desc">공지, 건의, 잡담까지. 뉴비스 공식 디스코드에 참여하세요.</p>
+        <div class="comm-arrow">참여하기 →</div>
+      </a>
+      <a class="comm-card card-youtube reveal" href="https://brr.kr/noobis-yb" target="_blank" rel="noopener">
+        <div class="comm-icon">▶️</div>
+        <div class="comm-platform">YOUTUBE</div>
+        <div class="comm-title">유튜브</div>
+        <p class="comm-desc">뉴비스 서버의 생생한 플레이 영상을 유튜브에서 감상하세요.</p>
+        <div class="comm-arrow">구경하기 →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- JOIN -->
 <section id="join">
   <div class="section-inner">
@@ -582,6 +690,12 @@
 <!-- FOOTER -->
 <footer>
   <p class="footer-logo">⛏ NOOBIS SERVER</p>
+  <div class="footer-links">
+    <a href="https://brr.kr/noobis-minelist" target="_blank" rel="noopener">📋 마인리스트</a>
+    <a href="https://brr.kr/noobis-hmp" target="_blank" rel="noopener">🏠 한마포</a>
+    <a href="https://discord.gg/zuPfnsy27M" target="_blank" rel="noopener">💬 디스코드</a>
+    <a href="https://brr.kr/noobis-yb" target="_blank" rel="noopener">▶️ 유튜브</a>
+  </div>
   <p>noobis.m-c.kr · 야생 &amp; 약탈 서바이벌 서버</p>
 </footer>
 
